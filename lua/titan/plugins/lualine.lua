@@ -49,12 +49,58 @@ return {
       },
     }
 
+    -- Custom Harpoon v2 statusline component
+    local function harpoon_component()
+      local ok, harpoon = pcall(require, "harpoon")
+      if not ok then
+        return ""
+      end
+
+      local list = harpoon:list()
+      local count = list:length()
+      if count == 0 then
+        return ""
+      end
+
+      local current_file = vim.fn.expand("%:p")
+      local parts = {}
+
+      for i = 1, count do
+        local item = list:get(i)
+        if item then
+          local file_path = item.value
+          local file_name = vim.fn.fnamemodify(file_path, ":t")
+          if file_name == "" then
+            file_name = "[No Name]"
+          end
+
+          -- Get full path for active check
+          local full_path = vim.fn.fnamemodify(file_path, ":p")
+          if current_file == full_path then
+            table.insert(parts, string.format("󰛢 %d:%s", i, file_name))
+          else
+            table.insert(parts, string.format("○ %d:%s", i, file_name))
+          end
+        end
+      end
+
+      return table.concat(parts, "  ")
+    end
+
     -- configure lualine with modified theme
     lualine.setup({
       options = {
         theme = my_lualine_theme,
       },
       sections = {
+        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_c = {
+          { "filename" },
+          {
+            harpoon_component,
+            color = { fg = colors.green, gui = "bold" },
+          },
+        },
         lualine_x = {
           {
             lazy_status.updates,
