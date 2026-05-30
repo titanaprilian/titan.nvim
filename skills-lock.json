@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "agents-md": {
+      "source": "mblode/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/agents-md/SKILL.md",
+      "computedHash": "aa59cd4cd6d91f2f6c4f1008dc643805ed65540597a7bf0d85adba1645f85725"
+    },
+    "readme-creator": {
+      "source": "mblode/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/readme-creator/SKILL.md",
+      "computedHash": "366729cc6f40acf8f6f8f8dacf979efc69e7416e98510d3128113efc7e8430f6"
+    }
+  }
+}
