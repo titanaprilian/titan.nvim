@@ -13,6 +13,12 @@
       "skillPath": "skills/executing-plans/SKILL.md",
       "computedHash": "b41c919caf1bb07fbacb0e29899ac513f9eb11cd4dd695975ad352c2c03cc4d7"
     },
+    "gh-commit-push-pr": {
+      "source": "davisbuilds/dojo",
+      "sourceType": "github",
+      "skillPath": "skills/gh-commit-push-pr/SKILL.md",
+      "computedHash": "67395cf183e9f0d9f9fae2e69d5823c2dd8898d952de224df81cc30f7919320c"
+    },
     "plugin-creator": {
       "source": "openai/plugins",
       "sourceType": "github",
