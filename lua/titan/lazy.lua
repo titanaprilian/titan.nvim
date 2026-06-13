@@ -20,5 +20,3 @@ require("lazy").setup({ { import = "titan.plugins" }, { import = "titan.plugins.
 		notify = false,
 	},
 })
-
-require("lazy").setup("titan.plugins")
